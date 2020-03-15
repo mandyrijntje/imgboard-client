@@ -6,20 +6,14 @@ import Profile from "./Profile";
 
 class ProfileContainer extends Component {
   componentDidMount() {
-    
     this.props.getUniqueUser(this.props.match.params.id);
     this.props.getUserImages(this.props.match.params.id);
   }
-  
 
   render() {
     const userDDisplayed = this.props.user.userDisplayed;
 
-    if (!userDDisplayed) {
-      return <p>Loading...</p>;
-    } else {
-      return <Profile user={userDDisplayed} images={this.props.images} />;
-    }
+    return <Profile user={userDDisplayed} images={this.props.images} />;
   }
 }
 
