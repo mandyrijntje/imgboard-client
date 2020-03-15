@@ -1,6 +1,6 @@
 import request from "superagent";
 
-// const baseUrl = "https://warm-dusk-67488.herokuapp.com";
+// const baseUrl = "https://mysterious-sierra-32170.herokuapp.com";
 const baseUrl = "http://localhost:4000";
 
 export const getJwt = jwt => ({
