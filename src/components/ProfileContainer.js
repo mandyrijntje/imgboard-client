@@ -13,7 +13,7 @@ class ProfileContainer extends Component {
     const userDisplayed = this.props.user.userDisplayed;
 
     if (!userDisplayed) {
-      return <p>loading</p>;
+      return <p>Loading...</p>;
     } else {
       return <Profile user={userDisplayed} images={this.props.images} />;
     }

@@ -16,8 +16,8 @@ class EditFormContainer extends Component {
     this.props.editImage(this.props.imageId, this.state);
 
     this.setState({
-      title: "",
-      url: ""
+      title: this.state.title,
+      url: this.state.url
     });
   };
 

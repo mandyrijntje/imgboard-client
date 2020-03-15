@@ -26,10 +26,10 @@ export default class EditForm extends Component {
                 onChange={this.props.onChange}
               />
             </label>
-            <input type="submit" value="Submit" />
+            <button>Change</button>
           </form>
         ) : null}
-        <button onClick={this.props.onHide}>Hide/Show</button>
+        <button onClick={this.props.onHide}>Edit</button>
       </div>
     );
   }
