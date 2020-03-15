@@ -19,6 +19,7 @@ class EditFormContainer extends Component {
       title: this.state.title,
       url: this.state.url
     });
+    this.props.history.push("/");
   };
 
   onHide = () => {
