@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  getImages
-  // , deleteImage
-} from "../store/actions/images";
+import { getImages, deleteImage } from "../store/actions/images";
 import ImageList from "./ImageList";
 
 class ListContainer extends Component {
@@ -11,17 +8,17 @@ class ListContainer extends Component {
     this.props.getImages();
   }
 
-  //   destroyImage = id => {
-  //     this.props.deleteImage(id);
-  //   };
+  destroyImage = id => {
+    this.props.deleteImage(id);
+  };
 
   render() {
     return (
       <div>
         <ImageList
           images={this.props.images.list}
-          //   user={this.props.user}
-          //   destroyImage={this.destroyImage}
+          user={this.props.user}
+          destroyImage={this.destroyImage}
         />
       </div>
     );
@@ -29,13 +26,13 @@ class ListContainer extends Component {
 }
 
 const mapStateToProps = reduxState => ({
-  images: reduxState.images
-  //   user: reduxState.user
+  images: reduxState.images,
+  user: reduxState.user
 });
 
 const mapDispatchToProps = {
-  getImages
-  // , deleteImage
+  getImages,
+  deleteImage
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);

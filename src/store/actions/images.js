@@ -51,7 +51,7 @@ export const createImage = data => (dispatch, getState) => {
     .set("Authorization", `Bearer ${user.auth}`)
     .send(data)
     .then(response => {
-      console.log("response boy", response.body);
+      console.log("response", response.body);
       const action = newImage(response.body);
       dispatch(action);
     })
