@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { editImage } from "../store/actions/images";
 import EditForm from "./EditForm";
+import {Redirect} from 'react-router-dom'
 
 class EditFormContainer extends Component {
   state = {
     title: "",
     url: "",
-    show: false
+    show: false,
+    redirect: false
   };
 
   onSubmit = event => {
@@ -17,9 +19,9 @@ class EditFormContainer extends Component {
 
     this.setState({
       title: this.state.title,
-      url: this.state.url
+      url: this.state.url,
+      redirect: true
     });
-    this.props.history.push("/");
   };
 
   onHide = () => {
@@ -35,6 +37,9 @@ class EditFormContainer extends Component {
   };
 
   render() {
+    if (this.state.redirect === true) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
         <h3>Edit</h3>
