@@ -5,32 +5,20 @@ import { getUserImages } from "../store/actions/images";
 import Profile from "./Profile";
 
 class ProfileContainer extends Component {
-  state = {
-    userReceived:"",
-    imagesReceived:[]
-
-  };
-
   componentDidMount() {
-    this.setState({userReceived:"",imagesReceived:[]
-  })
+    
     this.props.getUniqueUser(this.props.match.params.id);
     this.props.getUserImages(this.props.match.params.id);
-    
   }
-
-  componentWillUpdate(){
-    this.setState({userReceived:this.props.user.userDisplayed, imagesReceived:this.props.images
-    })
-  }
+  
 
   render() {
-    
+    const userDDisplayed = this.props.user.userDisplayed;
 
-    if (!this.props.user.userDisplayed) {
+    if (!userDDisplayed) {
       return <p>Loading...</p>;
     } else {
-      return <Profile user={this.state.userReceived} images={this.state.imagesReceived} />;
+      return <Profile user={userDDisplayed} images={this.props.images} />;
     }
   }
 }

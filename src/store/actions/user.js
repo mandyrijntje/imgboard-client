@@ -55,6 +55,8 @@ export const getUsers = () => dispatch => {
 };
 
 export const getUniqueUser = id => dispatch => {
+  dispatch(fetchUniqueUser(""));
+ 
   request.get(`${baseUrl}/users/${id}`).then(response => {
     const action = fetchUniqueUser(response.body);
     dispatch(action);
