@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {
   getImages
   // , deleteImage
-} from "../store/actions/actions";
+} from "../store/actions/images";
 import ImageList from "./ImageList";
 
 class ListContainer extends Component {
