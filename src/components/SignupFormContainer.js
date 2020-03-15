@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import SignUpForm from "./UserForm";
+import SignupForm from "./AuthForm";
 import { createUser } from "../store/actions/user";
 
 class SignUpFormContainer extends Component {
@@ -28,7 +28,7 @@ class SignUpFormContainer extends Component {
     return (
       <div>
         <h3>Sign Up</h3>
-        <SignUpForm
+        <SignupForm
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           values={this.state}

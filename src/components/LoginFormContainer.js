@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import LoginForm from "./UserForm.js";
+import LoginForm from "./AuthForm.js";
 import { login } from "../store/actions/user";
 
 class LoginFormContainer extends Component {
