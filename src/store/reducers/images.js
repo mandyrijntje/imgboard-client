@@ -19,7 +19,9 @@ export default (state = initialState, { type, payload }) => {
     case "UPDATE_IMAGE":
       return {
         ...state,
-        list: state.map(image => (image.id === payload.id ? payload : image))
+        list: state.list.map(image =>
+          image.id === payload.id ? payload : image
+        )
       };
 
     default:
