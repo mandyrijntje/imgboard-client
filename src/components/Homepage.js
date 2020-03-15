@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ListContainer from "./ListContainer";
 import LoginFormContainer from "./LoginFormContainer";
-import SignUpFormContainer from "./SignUpFormContainer";
+import SignupFormContainer from "./SignupFormContainer";
 import CreateFormContainer from "./CreateFormContainer";
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ class Homepage extends Component {
         <Link to="/users">Users list</Link>
         {!this.props.user.auth ? (
           <div>
-            <SignUpFormContainer />
+            <SignupFormContainer />
             <LoginFormContainer />
           </div>
         ) : (
