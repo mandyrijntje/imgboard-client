@@ -7,6 +7,7 @@ import Profile from "./Profile";
 class ProfileContainer extends Component {
   componentDidMount() {
     this.props.getUniqueUser(this.props.match.params.id);
+    this.props.getUserImages(this.props.match.params.id);
   }
 
   render() {
